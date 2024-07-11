@@ -1,0 +1,198 @@
+body,
+ul,
+li {
+  font-family: Tahoma;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(173, 216, 230); /* azul claro */
+}
+
+header {
+  background-color: rgb(0, 119, 182); /* azul médio */
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+h2 {
+  text-shadow: 2px 2px 2px black;
+}
+
+.opcoes {
+  position: absolute;
+  top: 400px;
+  right: 25px;
+}
+
+.title {
+  color: white;
+  width: 100%;
+  background-color: rgb(0, 153, 230); /* azul mais intenso */
+  display: inline-block;
+  padding: 2px 0px;
+  position: sticky;
+  top: 0px;
+}
+
+.banner {
+  height: 300px;
+  overflow: hidden;
+  color: rgba(0, 102, 153, 0.5); /* azul escuro */
+}
+
+.banner img {
+  margin: 0;
+  height: 100%;
+  width: 80%;
+  object-fit: cover;
+}
+
+.newItem {
+  background-color: rgb(173, 216, 230); /* azul claro */
+  padding: 30px 40px;
+  color: rgb(0, 51, 77); /* azul escuro */
+  display: flex;
+  flex-direction: column; /* mudança na disposição para coluna */
+  align-items: center; /* centraliza os itens */
+}
+
+.newItem input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.addBtn {
+  padding: 9px 10px;
+  background-color: rgb(0, 102, 153); /* azul claro mais suave */
+  color: white; /* azul escuro */
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.addBtn:hover {
+  background-color: #2aa5b5; /* azul mais intenso */
+  color: white;
+}
+
+.items {
+  background-color: rgb(173, 216, 230); /* azul claro */
+  padding: 30px 40px;
+  color: rgb(0, 51, 77); /* azul escuro */
+  display: flex;
+  flex-wrap: wrap; /* itens quebram linha conforme necessário */
+  justify-content: space-around; /* espaçamento entre os itens */
+}
+
+.items .item {
+  background-color: rgb(0, 119, 182); /* azul médio */
+  color: rgb(0, 26, 38); /* azul escuro */
+  padding: 20px;
+  margin: 10px;
+  width: 30%; /* largura dos itens */
+  border-radius: 10px;
+}
+
+.items .item:hover {
+  background-color: #2aa5b5; /* azul mais intenso */
+  color: white;
+}
+
+.apiIngredientes {
+  width: 170px;
+  height: 170px;
+  overflow: auto;
+}
+
+.close,
+.detail {
+  font-weight: bold;
+  font-size: 20px;
+  transition: filter 0.3s;
+}
+
+.close:hover,
+.detail:hover {
+  cursor: pointer;
+  filter: brightness(2);
+}
+
+textarea {
+  width: 95%;
+  padding-left: 10px;
+  height: 200px;
+  line-height: 30px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+fieldset {
+  border: none;
+}
+
+#myIngredientes th {
+  padding-right: 80px;
+  margin-bottom: 10px;
+}
+
+#ingredientes {
+  margin-bottom: 20px;
+}
+
+#titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 80px;
+}
+
+#newTitulo {
+  width: 300px;
+}
+
+#labelTitulo {
+  font-weight: bold;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+select {
+  margin-bottom: 10px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+#ingredientes input {
+  margin-bottom: 10px;
+}
+
+#categoria {
+  margin: 10px 0;
+}
+
+#labelCategoria {
+  font-weight: bold;
+}
+
+#Salvar {
+  margin-top: 20px;
+}
+
+#myTable th {
+  padding-right: 100px;
+  padding-bottom: 10px;
+}

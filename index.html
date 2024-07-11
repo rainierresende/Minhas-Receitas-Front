@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Minhas Receitas</title>
+  </head>
+
+  <body onload="carregaIngredientesAPI()">
+    <header>
+      <div class="title">
+        <h2>Minhas Receitas</h2>
+      </div>
+      <div class="banner">
+        <img
+          id="imagem"
+          src="./assests/cooking.jpeg"
+          alt="Pessoa cortando um tomate com variados legumes e verduras ao fundo."
+        />
+      </div>
+    </header>
+
+    <section class="opcoes">
+      <span onclick="openAba('newItem')" class="addBtn">Nova Receita</span>
+      <span onclick="openAba('listReceitas')" class="addBtn"
+        >Minhas Receitas</span
+      >
+    </section>
+
+    <div id="newItem" class="w3-container op_receitas" style="display: none">
+      <section class="newItem">
+        <script>
+          function carregaIngredientesAPI() {
+            getIngredientes();
+          }
+        </script>
+
+        <div>
+          <fieldset id="titulo">
+            <label for="fname" id="labelTitulo">Título:</label>
+            <input type="text" id="newTitulo" name="Titulo" /><br />
+            <input type="hidden" id="idReceita" name="ID" /><br />
+          </fieldset>
+
+          <div id="ingredientes">
+            <fieldset>
+              <legend>Ingredientes:</legend>
+              <select
+                id="list-ingredients2"
+                title="Selecione ingredientes:"
+                name="ingredientes-api"
+              >
+                <option selected disabled>Selecione um ingrediente</option>
+              </select>
+              <div>
+                <input type="text" id="newQtd" placeholder="Quantidade" />
+                <input
+                  type="text"
+                  id="newUnidade"
+                  placeholder="Unidade de Medida"
+                />
+                <span onclick="newIngrediente()" class="addBtn">Adicionar</span>
+              </div>
+              <section class="itemsIngredientes">
+                <table id="myIngredientes">
+                  <tr>
+                    <th>Ingrediente</th>
+                    <th>Quantidade</th>
+                    <th>Unidade de Medida</th>
+                    <th>
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/126/126468.png"
+                        width="15px"
+                        height="15px"
+                      />
+                    </th>
+                  </tr>
+                </table>
+              </section>
+            </fieldset>
+          </div>
+
+          <fieldset>
+            <legend>Modo de Preparo:</legend>
+            <textarea
+              type="text"
+              id="newPreparo"
+              name="Modo de Preparo"
+            ></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>Status:</legend>
+            <div id="status">
+              <input
+                type="radio"
+                id="AP"
+                name="newStatus"
+                value="Aprovada"
+              />Aprovada
+              <input
+                type="radio"
+                id="RE"
+                name="newStatus"
+                value="Reprovada"
+              />Reprovada
+              <input
+                type="radio"
+                id="NT"
+                name="newStatus"
+                value="Não testada"
+                checked="checked"
+              />Não testada
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <label for="fname" id="labelCategoria">Categoria:</label>
+            <div id="categoria">
+              <input
+                type="radio"
+                id="DOCE"
+                name="newCategoria"
+                value="Doce"
+              />Doce
+              <input
+                type="radio"
+                id="SAL"
+                name="newCategoria"
+                value="Salgado"
+              />Salgado
+            </div>
+          </fieldset>
+
+          <span id="Salvar" onclick="newItem()" class="addBtn">Salvar</span>
+          <span id="Voltar" onclick="voltar()" class="addBtn">Voltar</span>
+          <span id="Atualizar" onclick="updateItem()" class="addBtn"
+            >Atualizar</span
+          >
+        </div>
+      </section>
+    </div>
+
+    <div
+      id="listReceitas"
+      class="w3-container op_receitas"
+      style="display: none"
+    >
+      <section class="items">
+        <div>
+          <table id="myTable">
+            <tr>
+              <th style="width: 10px">ID</th>
+              <th>Titulo</th>
+              <th>Categoria</th>
+              <th>Status</th>
+              <th>Detalhe</th>
+              <th>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/126/126468.png"
+                  width="15px"
+                  height="15px"
+                />
+              </th>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <div
+      id="preferidas"
+      class="w3-container op_receitas"
+      style="display: none"
+    ></div>
+
+    <script>
+      function openAba(abaName) {
+        var i;
+        var x = document.getElementsByClassName("op_receitas");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(abaName).style.display = "block";
+        document.getElementById("Atualizar").style.display = "none";
+      }
+    </script>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
